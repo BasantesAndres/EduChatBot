@@ -1,0 +1,128 @@
+COURSE: Databases
+Code: PA - BASES DE DATOS - 2025SEM02UNICA-ECMC1020-CA15-LEC
+Language: English
+
+=== CONTENTS ===
+
+UC1: Fundamentals and Database Design
+  1.1 Introduction to Databases
+  1.2 Fundamentals of the Relational Model 
+      (Tables, Relationships, Normalization, Primary Keys, Foreign Keys, Referential Integrity)
+  1.3 Conceptual Database Modeling
+  1.4 Logical and Physical Modeling of Databases
+
+UC2: Structured Query Language (SQL)
+  2.1 Data Definition Language (DDL) & Data Manipulation Language (DML)
+  2.2 Introduction to SQL and Basic Queries (SELECT, WHERE)
+  2.3 Advanced Queries (Cross Join, Inner Join, Right Join, Left Join)
+  2.4 Advanced Queries (Aggregation)
+      - Functions
+      - Stored Procedures
+      - Permissions
+      - Backup and Restore
+
+UC3: Development of APIs for Database Operations
+  3.1 Introduction to APIs for Databases 1/2
+  3.2 Introduction to APIs for Databases 2/2
+  3.3 API Design Methods for Databases 1/2
+  3.4 API Design Methods for Databases 2/2
+
+UC4: Non-SQL Databases and their Applications
+  4.1 Introduction to No-SQL Databases
+  4.2 No-SQL Database Application Case Studies
+  4.3 Implementation of APIs for Non-SQL Databases 1/2
+  4.4 Implementation of APIs for Non-SQL Databases 2/2
+
+
+=== EVALUATION SCHEME ===
+
+The course is evaluated in TWO TERMS. Each term represents 50% of the final grade.
+
+8.1 First Term of the Period  (50% of final grade)
+
+- Formative Evaluation (25%):
+    * Quizzes:           7.5%
+    * Project Advances: 10.0%
+    * Assignments:       7.5%
+    * Subtotal:         25%
+
+- Midterm Evaluation (25%):
+    * Midterm Theory Exam:   10%
+    * Midterm Practice Exam: 15%
+    * Subtotal:              25%
+
+Total First Term = 50% of final course grade.
+
+
+8.2 Second Term of the Period  (50% of final grade)
+
+- Formative Evaluation (25%):
+    * Quizzes:           7.5%
+    * Project Advances: 10.0%
+    * Assignments:       7.5%
+    * Subtotal:         25%
+
+- Final Evaluation (25%):
+    * Final Project: 25%
+    * Subtotal:      25%
+
+Total Second Term = 50% of final course grade.
+
+Global course grade = First Term (50%) + Second Term (50%).
+
+
+=== BIBLIOGRAPHY ===
+
+Main Textbook
+- "Database System Concepts", 7th Edition
+  Authors: Abraham Silberschatz, Henry Korth, S. Sudarshan (2020)
+
+Complementary References
+- "SQL for Data Scientists: A Beginner's Guide for Building Datasets for Analysis"
+  Author: Renée M. P. Teate (2021)
+
+- "Introducing MySQL Shell: Administration Made Easy with Python"
+  Author: Charles Bell (2019)
+
+- "Practical MongoDB: Architecting, Developing, and Administering MongoDB"
+  Author: (Apress, 2015)
+
+
+=== MAKE UP EXAM POLICY ===
+
+According to Article 61 of the UITEY Academic Regulations:
+
+- If students have a final grade point average between 4.8 and 5.9 in the subject,
+  they are entitled to a make-up exam at the end of the term.
+- The content of this exam must reflect ALL aspects covered in the subject during the academic term.
+- A passing grade on a make-up exam will raise the student’s total grade to 6.0 
+  (the minimum passing grade).
+
+
+=== STUDENT ATTENDANCE POLICY ===
+
+Students must comply with Articles 82 and 83 of the UITEY Academic Regulations:
+
+- Article 82 – Student Attendance at Academic Activities:
+  * Students must attend all academic activities (classes, assessments, labs, 
+    and other activities that contribute to their education) on the established dates and times.
+  * Academic staff ensures compliance with attendance criteria and learning components
+    through attendance records.
+  * For second language learning subjects, a minimum attendance of 80% is required.
+  * For other subjects, the minimum attendance required for passing is 70%.
+
+- Article 83 – Justification for Absence:
+  * Students who are absent must present supporting documents within five (5) days
+    from the date of absence.
+  * Justifications are validated by the teacher or competent unit.
+  * Once justification is approved, the teacher may define criteria for making up 
+    missed academic activities.
+  * Unjustified absences may affect the student’s performance and completion of the course.
+
+
+=== SCHEDULE ===
+
+Classroom: PB-A02
+
+- Monday     17h00 – 19h00
+- Wednesday  16h00 – 19h00

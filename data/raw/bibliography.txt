@@ -1,0 +1,10 @@
+DATABASES course – Bibliography
+
+Main textbooks:
+- Silberschatz, Korth, Sudarshan. Database System Concepts.
+- Elmasri, Navathe. Fundamentals of Database Systems.
+- (Añade aquí todos los libros que salgan en tu sílabo...)
+
+Additional resources:
+- Official documentation of MySQL / PostgreSQL / MongoDB.
+- Online tutorials and academic articles related to relational databases and SQL.

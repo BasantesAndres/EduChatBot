@@ -1,0 +1,202 @@
+=== QUIZ SET 1: SQLAlchemy, Flask, Curl, Marshmallow, Docker & MySQL ===
+
+[Q1]
+Question: Which configuration string is used to connect SQLAlchemy to a MySQL database?
+Options:
+  a) 'mysql+pymysql://username:password@hostname/database_name'
+  b) 'sqlite:///database_name.db'
+  c) 'mysql://username:password@hostname/database_name'
+  d) 'pymysql://username:password@hostname/database_name'
+Correct answer: a
+Explanation: To connect SQLAlchemy to MySQL, use the connection string format
+'mysql+pymysql://username:password@hostname/database_name'.
+
+[Q2]
+Question: What is an endpoint in Flask?
+Options:
+  a) A URL route in Flask that maps to a specific function to handle requests.
+  b) A database query that retrieves specific rows of data.
+  c) A command line tool for debugging Flask applications.
+  d) A library used for handling HTTP requests in Flask.
+Correct answer: a
+Explanation: An endpoint is a route defined in Flask that is tied to a function for processing requests.
+
+[Q3]
+Question: Which curl command is used to send a GET request to retrieve data from a Flask API?
+Options:
+  a) curl -X GET http://localhost:5000/endpoint
+  b) curl -X POST http://localhost:5000/endpoint
+  c) curl -X DELETE http://localhost:5000/endpoint
+  d) curl -X PUT http://localhost:5000/endpoint
+Correct answer: a
+Explanation: The -X GET option in curl is used to retrieve data from an API endpoint.
+
+[Q4]
+Question: What is the correct decorator to define a Flask route that handles POST requests?
+Options:
+  a) @app.route('/endpoint', methods=['POST'])
+  b) @app.route('/endpoint', methods=['GET', 'POST'])
+  c) @app.route('/endpoint', methods=['PUT'])
+  d) @app.post('/endpoint')
+Correct answer: a
+Explanation: To handle POST requests, specify methods=['POST'] in the @app.route decorator.
+
+[Q5]
+Question: Which of the following best describes the role of a schema in Flask Marshmallow?
+Options:
+  a) It defines the structure of data for serialization and deserialization.
+  b) It handles database connections for the application.
+  c) It defines SQL queries for interacting with the database.
+  d) It logs all API requests and responses.
+Correct answer: a
+Explanation: A schema in Flask Marshmallow defines how objects are serialized into JSON and 
+deserialized back into Python objects.
+
+[Q6]
+Question: Which command can be used to install the official MySQL Docker image from Docker Hub?
+Options (multiple correct):
+  a) docker run -d mysql:latest
+  b) docker pull mysql:latest
+  c) docker build -t mysql:latest .
+  d) docker create mysql:latest
+Correct answers: b, c
+Explanation: You can pull the official image with docker pull mysql:latest, or build your own image
+tagged mysql:latest using docker build -t mysql:latest ..
+
+[Q7]
+Question: What is the primary advantage of containerizing MySQL with Docker for development and testing environments?
+Options (multiple correct):
+  a) Portability and isolation of MySQL environments, making it easy to recreate and share setups.
+  b) Increased security of MySQL databases.
+  c) Reduced hardware requirements for MySQL databases.
+  d) Improved MySQL performance on the host system.
+Correct answers: a, c
+Explanation: Docker provides portable, isolated environments and can help optimize resource usage.
+
+[Q8]
+Question: Which command is used to start a MySQL container with Docker using the official image?
+Options (multiple correct):
+  a) docker start mysql-container
+  b) docker pause mysql-container
+  c) docker create --name mysql-container mysql:latest
+  d) docker run -d --name mysql-container mysql:latest
+Correct answers: a, c, d
+Explanation:
+- docker run -d --name ... creates and starts the container.
+- docker create --name ... creates it.
+- docker start ... starts an existing container.
+
+[Q9]
+Question: How can you access the MySQL command-line client in a running MySQL container?
+Options (multiple correct):
+  a) Use docker exec to access the container shell and then run mysql.
+  b) Use a MySQL client to connect to the container's IP address.
+  c) Directly install MySQL on the host system.
+  d) MySQL command-line is not available in a container.
+Correct answers: a, b
+Explanation: You can exec into the container and run mysql, or connect from outside using a client.
+
+[Q10]
+Question: What is the purpose of using Docker for MySQL containerization?
+Options:
+  a) To reduce the security of MySQL databases.
+  b) To slow down MySQL performance for testing purposes.
+  c) To encapsulate MySQL and its dependencies, making it portable and isolated.
+  d) To install MySQL on a physical server.
+Correct answer: c
+Explanation: Containerization packages MySQL and its dependencies into an isolated, portable environment.
+
+
+=== QUIZ SET 2: MongoDB, Docker Compose, Flask, Curl, Dockerfile ===
+
+[Q1]
+Question: How do you establish a connection to a MongoDB database using PyMongo?
+Options:
+  a) client = pymongo.MongoClient('mongodb://localhost:27017/')
+  b) client = pymongo.connect('localhost:27017')
+  c) client = pymongo.MongoDB('localhost', 27017)
+  d) client = pymongo.Client('mongodb://localhost:27017')
+Correct answer: a
+Explanation: The correct syntax is pymongo.MongoClient() with the appropriate connection string.
+
+[Q2]
+Question: What is the role of the volumes section in a Docker Compose file?
+Options:
+  a) Defines persistent storage that containers can use.
+  b) Specifies the base images for each service.
+  c) Lists the ports that each container will expose.
+  d) Defines environment variables shared by all services.
+Correct answer: a
+Explanation: Volumes provide persistent storage across container restarts.
+
+[Q3]
+Question: Which of the following defines a valid Flask endpoint?
+Options:
+  a) @app.route('/api/resource', methods=['GET'])
+  b) @flask.route('/api/resource', 'GET')
+  c) @app.endpoint('/resource', methods=['POST'])
+  d) @route('/resource', methods=['GET'])
+Correct answer: a
+Explanation: Valid Flask endpoints use @app.route(path, methods=[...]) syntax.
+
+[Q4]
+Question: Which cURL command submits a POST request to an API with JSON data?
+Options:
+  a) curl -X POST -H "Content-Type: application/json" -d '{"key":"value"}' http://localhost:5000/api/resource
+  b) curl -POST -H "Content-Type: application/json" '{"key":"value"}' http://localhost:5000/api/resource
+  c) curl -POST -header '{"key":"value"}' http://localhost:5000/api/resource
+Correct answer: a
+Explanation: Use -X POST, set Content-Type to application/json, and send JSON data with -d.
+
+[Q5]
+Question: In MongoDB, data is stored in which structure?
+Options:
+  a) Documents within collections
+  b) Rows within tables
+  c) Files within directories
+  d) Nodes within graphs
+Correct answer: a
+Explanation: MongoDB stores BSON documents in collections.
+
+[Q6]
+Question: What is the function of the CMD instruction in a Dockerfile?
+Options:
+  a) Sets the default command that runs when the container starts
+  b) Installs dependencies during the build process
+  c) Defines the base image for building the final container
+  d) Creates a new working directory inside the container
+Correct answer: a
+Explanation: CMD specifies the default command executed when the container starts.
+
+[Q7]
+Question: Which command updates a document in a MongoDB collection?
+Options:
+  a) db.collection.update()
+  b) db.collection.modify()
+  c) db.collection.edit()
+  d) db.collection.change()
+Correct answer: a
+Explanation: db.collection.update() is used to update documents.
+
+[Q8]
+Question: What is the purpose of the services section in a Docker Compose YAML file?
+Options:
+  a) Defines the different containers that will be launched
+  b) Defines volumes that persist data across containers
+  c) Specifies the host Docker version requirements
+  d) Contains configuration for container networking only
+Correct answer: a
+Explanation: The services section lists the containers (services) that compose the application.
+
+[Q9]
+Question: What is the purpose of the FROM instruction in a Dockerfile?
+Options:
+  a) It defines the base image used to build the new image
+  b) It copies files from the container to the host
+  c) It specifies the default command when running a container
+  d) It sets environment variables inside the image
+Correct answer: a
+Explanation: FROM selects the base image used to build the new image.
+
+[Q10]
+Questi

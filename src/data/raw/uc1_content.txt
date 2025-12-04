@@ -1,0 +1,563 @@
+UC1: FUNDAMENTALS AND DATABASE DESIGN
+
+This unit introduces fundamental concepts of databases, database management systems (DBMS), 
+the relational model, and the main stages of database design (conceptual, logical, and physical).
+
+==================================================
+1. DATABASES AND DBMS – DEFINITIONS
+==================================================
+
+A database system (DBS) is a computerized record-keeping system whose purpose is to 
+store related data and make information available when required.
+
+A Database Management System (DBMS) is a set of software programs that allow the 
+creation, management, and controlled access to a database.
+
+Examples of popular DBMS: Oracle, MySQL, PostgreSQL, SQL Server, MongoDB (NoSQL), etc.
+
+--------------------------------
+1.1 Objectives of Database Systems
+--------------------------------
+
+Typical objectives of a DBS include:
+
+- Security & Protection:
+  Prevent unauthorized access and protect data from concurrent interference.
+
+- Reliability:
+  Provide stable, predictable performance and safe storage.
+
+- Multi-user Support:
+  Allow multiple users and applications to work with the same data.
+
+- Flexibility:
+  Support different logical views and multiple ways of accessing data.
+
+- Ease of Data Access and Modification:
+  Provide high-level query languages (e.g., SQL).
+
+- Accuracy & Consistency:
+  Enforce integrity rules so data remains correct.
+
+- Clarity & Standardization:
+  Avoid ambiguity by using standardized formats and definitions.
+
+- Ability to Handle Unanticipated Requests:
+  Allow ad-hoc queries and reporting.
+
+- Protection of Investment:
+  Support backup and recovery.
+
+- Minimization of Data Proliferation:
+  Encourage reuse of existing data instead of creating redundant files.
+
+
+--------------------------------
+1.2 Data Independence
+--------------------------------
+
+Data independence is the immunity of application programs to changes in data structure 
+or access strategy.
+
+- Physical Data Independence:
+  Applications are independent of file organization, hardware, or storage medium.
+
+- Logical Data Independence:
+  Each user or application can have its own logical view of the data without 
+  needing a global view.
+
+Data independence is important because:
+- Different applications need different views of the same data.
+- Performance tuning and structural changes should not break existing programs.
+
+==================================================
+2. DBMS ARCHITECTURE (THREE LEVELS)
+==================================================
+
+A classic DBMS architecture includes three levels: external, conceptual, and internal.
+
+--------------------------------
+2.1 External Level (User Views)
+--------------------------------
+
+- Represents the individual views of different users or applications.
+- Defined by external schemas.
+- Each external schema shows only the portion of the database relevant to that user.
+- Applications access the database through these external schemas using host languages
+  (e.g., C, Java, Python) combined with the data sublanguage (SQL).
+
+--------------------------------
+2.2 Conceptual Level (Logical Schema)
+--------------------------------
+
+- An abstract representation of the entire database content.
+- Defined by the conceptual or logical schema.
+- Specifies:
+  * Entities and relationships
+  * Attributes and domains
+  * Security constraints, integrity checks, and business rules
+
+- Must be:
+  * Comprehensive (covers the whole database)
+  * Independent from physical storage details
+  * Compatible with data independence
+
+--------------------------------
+2.3 Internal Level (Storage View)
+--------------------------------
+
+- Low-level representation of the database.
+- Defined by the internal schema.
+- Deals with:
+  * Record formats and field representation
+  * Indexes
+  * File organization and storage sequence
+  * Access paths
+
+This level has strong impact on performance (I/O, indexing, caching, etc.).
+
+==================================================
+3. DBMS COMPONENTS
+==================================================
+
+Functional components of a DBMS include:
+
+- DBMS Engine:
+  Links subsystems to the physical device through the operating system. 
+  Manages file access and data transfer.
+
+- Data Definition Subsystem:
+  Tools for defining and altering the schema (DDL).
+
+- User Interface Subsystem:
+  Allows users and applications to query the database using SQL or other interfaces.
+
+- Application Development Subsystem:
+  Tools for building forms, reports, menus, and application logic.
+
+- Data Administration Subsystem:
+  Utilities for backup, recovery, tuning, and storage management. Used by DBAs.
+
+- Data Dictionary / System Catalog:
+  Stores metadata about tables, columns, relationships, constraints, users, and privileges.
+
+- Data Communications Manager:
+  Manages communication between clients and the DBMS in client–server environments.
+
+- Utilities:
+  Programs for loading data, exporting/importing, gathering statistics, etc.
+
+==================================================
+4. FRONT-END VS BACK-END
+==================================================
+
+- Front-End:
+  End users, applications, and programming interfaces (IDEs such as Visual Studio, NetBeans, Qt).
+  Typically handles forms, reports, and business logic.
+
+- Back-End:
+  The DBMS and the database itself.
+  Responsible for storage, query processing, transaction management, concurrency, and recovery.
+
+Front-end and back-end may run on different machines connected via a network.
+
+==================================================
+5. DBMS VS FILE PROCESSING SYSTEMS
+==================================================
+
+Traditional file systems store data in separate files for each application.
+
+Problems with file processing:
+
+- Redundancy and Inconsistency:
+  Duplicate data across files leads to contradictory values.
+
+- Difficult Access:
+  New reports require new programs.
+
+- Data Isolation:
+  Data scattered in multiple files with different formats.
+
+- Lack of Integrity:
+  Hard to enforce rules (e.g., valid department numbers, account balances).
+
+- Atomicity Problems:
+  Multi-step operations (e.g., bank transfers) may fail in the middle.
+
+- Concurrency Problems:
+  Simultaneous updates may lead to lost updates or inconsistent data.
+
+- Security Problems:
+  Difficult to control user access to specific subsets of data.
+
+The database approach, using a DBMS, provides integration and sharing of data, 
+better integrity, and centralized control.
+
+==================================================
+6. DATABASE DEVELOPMENT LIFE CYCLE (DDLC)
+==================================================
+
+Phases and typical deliverables:
+
+1) Database Investigation and Analysis
+   - Goal: understand business requirements.
+   - Deliverable: Initial Database Requirements.
+
+2) Database Modeling
+   - Build conceptual models (ERDs) and process models.
+   - Deliverable: Database Model.
+
+3) Database Designing
+   - Design the logical schema and constraints.
+   - Deliverable: Database Design Specification.
+
+4) Database Development
+   - Implement the logical design in a DBMS.
+   - Deliverable: Actual Database.
+
+5) Implementation
+   - Deploy database in production and integrate with applications.
+   - Deliverable: Database in Use.
+
+6) Management
+   - Monitor, tune, backup, and evolve the database.
+   - Deliverable: Enhanced Database and updated documentation.
+
+The process is iterative: if requirements are incorrect or incomplete,
+design and analysis must be revisited.
+
+==================================================
+7. RELATIONAL MODEL FOUNDATIONS
+==================================================
+
+The relational model was introduced by Edgar F. Codd (1970) and uses mathematical 
+relations (tables) to represent data.
+
+Key concepts:
+
+- Relation → Table.
+- Tuple → Row (record).
+- Attribute → Column (field).
+- Domain → Set of allowed values for an attribute.
+
+Tables represent entity types; rows represent individual entities.
+
+Relationships between tables are represented using primary keys and foreign keys.
+
+--------------------------------
+7.1 Tables and Relationships
+--------------------------------
+
+- A table stores data in rows and columns.
+  Example: Books(BookID, Title, Author, Year).
+
+- A relationship connects tables via common attributes.
+  Common types:
+  * One-to-one (1:1)
+  * One-to-many (1:N)
+  * Many-to-many (M:N)
+
+- Referential Integrity:
+  Foreign keys in one table must match existing primary keys in another.
+  Prevents orphan records and ensures consistency.
+
+==================================================
+8. CONCEPTUAL DESIGN AND ER MODEL
+==================================================
+
+Conceptual design transforms user requirements into an Entity-Relationship Diagram (ERD).
+
+Steps:
+
+1. Identify Entities (nouns: Student, Course, Professor, Department, etc.).
+2. Identify Attributes (properties of entities).
+3. Identify Relationships (verbs: "enrolls in", "teaches", "belongs to").
+4. Determine cardinalities and optionalities (1:1, 1:N, M:N; mandatory vs optional).
+
+The ERD:
+
+- Focuses on the big picture, not on implementation details.
+- Is validated with stakeholders and revised until requirements are fully captured.
+
+Entities may support generalization hierarchies (e.g., Person → Student, Professor).
+
+==================================================
+9. LOGICAL DESIGN – ENTITIES AND ATTRIBUTES
+==================================================
+
+Logical design converts the conceptual model into a structure suitable for direct 
+implementation in a relational DBMS.
+
+Tasks:
+
+- Define entities as tables.
+- Define attributes as columns (with names and data types).
+- Identify strong vs weak entities:
+  * Strong: exist independently (e.g., Product).
+  * Weak: existence depends on another entity (e.g., OrderDetail).
+
+Good naming conventions:
+
+- Singular, clear, unambiguous table and column names.
+- Avoid spaces; use underscores if necessary.
+
+Attributes:
+
+- Single-valued vs multi-valued vs derived.
+- Each attribute should help identify, describe, or classify an entity.
+- Multi-valued attributes often become separate entities (e.g., Skills for Employee).
+- Derived attributes are often computed (e.g., Age from BirthDate) rather than stored.
+
+Data types:
+
+- Choose appropriate types (integer, decimal, char/varchar, date/time, etc.).
+- Consider range, precision, and storage.
+- Some DBMSs support user-defined types.
+
+Constraints:
+
+- CHECK constraints enforce allowed ranges or formats.
+- DEFAULT values can auto-fill common values.
+- Nullability: define whether a column can be left NULL.
+
+==================================================
+10. KEYS AND RELATIONSHIPS IN THE LOGICAL MODEL
+==================================================
+
+Keys:
+
+- Primary Key (PK):
+  * Uniquely identifies each row.
+  * Cannot be NULL.
+  * Should be stable (not change frequently).
+
+- Candidate Keys:
+  * Attributes that could serve as PKs.
+
+- Superkey:
+  * PK plus additional attributes (or any superset that still uniquely identifies rows).
+
+- Composite/Compound PKs:
+  * PK formed by multiple columns (e.g., (EmployeeID, ProjectID)).
+
+Foreign Keys (FKs):
+
+- Implement relationships between tables.
+- Enforce referential integrity (FK values must exist in the referenced PK).
+
+Relationships:
+
+- One-to-one:
+  * Each row in A matches at most one row in B and vice versa.
+  * Sometimes implemented by sharing the same PK in two tables.
+
+- One-to-many:
+  * Most common relationship.
+  * PK on the “one” side; FK on the “many” side.
+
+- Many-to-many:
+  * Implemented via an intersection (join) table.
+  * The join table stores FKs to both sides and often uses (FK1, FK2) as a composite PK.
+
+Optionality:
+
+- Mandatory participation: FK cannot be NULL.
+- Optional participation: FK can be NULL.
+
+Unary (Recursive) relationships:
+
+- Relationship within the same table.
+  * Example: Employee manages Employees (manager_id references employee_id).
+  * May be 1:1 or 1:N.
+
+==================================================
+11. FOREIGN KEYS AS PRIMARY KEYS
+==================================================
+
+Cases:
+
+1) FK as part of the PK (identifying relationship)
+   - Child’s identity is determined by the parent.
+   - Example: OrderDetail has PK (OrderID, ProductID).
+     Both columns are FKs and together form the PK.
+
+2) Child with independent PK (non-identifying relationship)
+   - Child has its own PK plus an FK to the parent.
+   - Example: Employee(EmpID PK, DeptID FK).
+     EmpID is enough to identify the employee.
+
+3) FK as the sole PK (strict 1:1)
+   - Example: Passport(PersonID PK, PersonID FK).
+     One person, one passport.
+
+Guidelines:
+
+- Use FKs as PKs when the child cannot exist without the parent.
+- Use independent PKs when the child has its own life cycle.
+- Use FK-as-PK for true one-to-one relations.
+
+==================================================
+12. ONE-TO-ONE RELATIONSHIPS – USE CASES
+==================================================
+
+When 1:1 relationships are useful:
+
+- Splitting large or sensitive data:
+  * Example: Users table vs UserDetails table.
+
+- Optional data:
+  * Example: Employee may or may not have a company car → separate CompanyCar table.
+
+- Security / Regulatory reasons:
+  * Example: separating personal identity data from confidential medical records.
+
+- Logical organization / performance:
+  * Frequently used attributes in one table, rarely used large attributes in another.
+
+Examples of 1:1 pairs:
+- Person – Passport
+- Employee – ParkingSpace
+- User – Profile
+- Country – CapitalCity
+- Student – Locker
+
+==================================================
+13. PHYSICAL DESIGN – OVERVIEW
+==================================================
+
+Physical design is the final step where the logical model is implemented in a DBMS.
+
+Considerations:
+
+- DBMS selection:
+  * Must support required constraints, data types, and business rules.
+  * Consider scalability, hardware requirements, cost, and tools.
+
+- Technical aspects:
+  * Storage requirements and access paths.
+  * Client-server or multi-tier architecture.
+  * Integration with development tools.
+
+- Economic factors:
+  * Licensing, hardware, migration costs, training, and maintenance.
+
+Physical storage:
+
+- System tablespace:
+  * Internal DBMS structures and metadata.
+
+- Data tablespace:
+  * User databases and data files.
+
+Entities become tables, attributes become columns, and constraints are implemented 
+(using PK, FK, CHECK, UNIQUE, NOT NULL, etc.). Indexes and views can be added to 
+improve performance or provide alternative interfaces.
+
+==================================================
+14. PHYSICAL DESIGN – ENTITIES TO TABLES
+==================================================
+
+Types of tables:
+
+- Data tables (independent):
+  Store the main entities (e.g., Customer, Product).
+
+- Join/intersection tables:
+  Implement many-to-many relationships (e.g., EmployeeProject).
+
+- Lookup tables:
+  Hold static or reference data used for validation 
+  (e.g., list of valid countries, statuses, types).
+
+Transforming relationships:
+
+- 1:1 → PK of parent appears as FK (and sometimes PK) in child.
+- 1:N → PK on the “one” side; FK in the “many” side.
+- M:N → Create an intersection table with FKs to both sides.
+
+Transforming attributes:
+
+- Choose concrete DBMS data types (VARCHAR, INT, DATE, DECIMAL, etc.).
+- Specify:
+  * Lengths or precision/scale.
+  * Default values.
+  * Nullability.
+  * Constraints and validation rules.
+
+==================================================
+15. CONCEPTUAL DESIGN – PRACTICE EXERCISES
+==================================================
+
+EXERCISE 01 – Online Learning Platform
+
+Design an ER model for:
+- Students enroll in multiple courses.
+- Each course is taught by one professor (professor can teach many courses).
+- Students submit assignments for the courses they are enrolled in.
+- Professors grade assignments.
+
+Suggested entities and attributes:
+- Student(StudentID, Name, Surname, Email, Telephone, Address)
+- Professor(ProfessorID, Name, Email, Telephone)
+- Course(CourseID, CourseName, Description, Credits)
+- Assignment(AssignmentID, Title, Description, DueDate, CourseID)
+- Submission(SubmissionID, StudentID, AssignmentID, SubmissionDate, Grade)
+
+Identify relationships and cardinalities:
+- Student–Course (M:N via Enrollment)
+- Course–Professor (N:1)
+- Course–Assignment (1:N)
+- Assignment–Submission (1:N)
+- Student–Submission (1:N)
+
+--------------------------------------------------
+EXERCISE 02 – Sales Company
+--------------------------------------------------
+A company sells products to customers. Model:
+- Customers with personal data.
+- Products with code, name, unit price.
+- Customers buy products (M:N via Sales).
+- Products are supplied by vendors, but each product has exactly one supplier.
+- Vendors have RUC, name, address.
+
+--------------------------------------------------
+EXERCISE 03 – Institute Database
+--------------------------------------------------
+Model professors, modules, students, and groups:
+- Teachers teach modules; each module is taught by exactly one teacher.
+- Students enroll in one or more modules.
+- Each course has a group of students and one group delegate.
+
+--------------------------------------------------
+EXERCISE 04 – Transport Company
+--------------------------------------------------
+Model truck drivers, packages, provinces, and trucks:
+- One trucker delivers many packages; each package is delivered by one trucker.
+- A package arrives to exactly one province; a province receives many packages.
+- Trucks are driven by truckers; one trucker can drive different trucks on different dates, 
+  and one truck can be driven by multiple truckers (M:N via a relationship with date).
+
+--------------------------------------------------
+EXERCISE 05 – Clinic Management
+--------------------------------------------------
+Model patients, doctors, and admissions:
+- Patients and their personal data.
+- Doctors and their specialty.
+- Each admission has a room/bed and one responsible doctor.
+- A patient can have multiple admissions; a doctor can attend multiple admissions.
+
+--------------------------------------------------
+EXERCISE 06 – Person–Children
+--------------------------------------------------
+Model PERSON with attributes (ID, Name, Address, Phone) where:
+- A person can have many children or none.
+- Every person is the child of another person.
+- Transform the PERSON–HAS CHILDREN–PERSON relationship into relational tables.
+
+--------------------------------------------------
+EXERCISE 07 – Library System
+--------------------------------------------------
+Model authors, books, copies, users, and loans:
+- Authors write books (M:N).
+- Books have many copies; a copy belongs to one book.
+- Users borrow copies (M:N) with attributes LoanDate and ReturnDate.

@@ -1,0 +1,21 @@
+DATABASES course – Evaluation scheme
+
+First Term of the Period (50% of final grade):
+- Quizzes: 7.5%
+- Project advances: 10%
+- Assignments: 7.5%
+- Midterm theory: 10%
+- Midterm practice: 15%
+Total first term weight: 50% of the final course grade.
+
+Second Term of the Period (50% of final grade):
+- Quizzes: 7.5%
+- Project advances: 10%
+- Assignments: 7.5%
+- Final project: 25%
+Total second term weight: 50% of the final course grade.
+
+Therefore:
+- Final project weight: 25% of the final course grade.
+- First term (formative + midterm) = 50%.
+- Second term (formative + final project) = 50%.

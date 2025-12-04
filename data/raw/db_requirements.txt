@@ -1,0 +1,106 @@
+DATABASE DESIGN REQUIREMENTS ANALYSIS
+
+This text summarizes the requirements analysis process used when designing a database.
+
+==================================================
+1. PURPOSE OF REQUIREMENTS ANALYSIS
+==================================================
+
+Before designing a database, we must understand and document the business requirements.
+
+Goals:
+- Capture user, customer, and business needs.
+- Identify the rules, data, and processes that define how the organization works.
+- Produce a functional requirements specification that can be translated into 
+  data models and system design.
+
+The process is typically divided into three main stages:
+1) Determining business requirements.
+2) Analyzing requirements.
+3) Evaluating requirements.
+
+==================================================
+2. DETERMINING BUSINESS REQUIREMENTS
+==================================================
+
+Activities:
+
+- Collect information from users about their tasks.
+- Understand how data is interchanged and exchanged within the organization.
+- Identify factors that affect business processes.
+
+Typical techniques:
+- Divide the organization into departments and functions.
+- Interview users to learn:
+  * What information they handle.
+  * What processes they execute.
+  * What business rules must be followed.
+
+Because information and processes are interdependent, they must be studied together.
+At this stage we:
+- Identify entities (groups of related data).
+- Identify relationships (connections between entities).
+- Document business rules that may later enforce referential integrity or constraints.
+
+==================================================
+3. ANALYZING REQUIREMENTS
+==================================================
+
+Once information is collected, it is analyzed to produce system requirements.
+
+Key deliverables:
+
+- Process models and Data Flow Diagrams (DFDs):
+  * Describe the flow of data and the operations performed by the system.
+
+- Conceptual Entity–Relationship Diagram (ERD):
+  * High-level conceptual model of entities, relationships, and attributes.
+  * Represents the data requirements of the business in a non-technical format.
+
+Characteristics of the conceptual ERD:
+- Focuses on structure and content of data, not on physical implementation.
+- Serves as a basis to decompose into a more detailed logical data model.
+- Used to verify that all business data needs have been captured.
+
+The ERD and the process models must be consistent:
+- They should describe the same business requirements from different angles
+  (data vs processes).
+- Inconsistencies between DFDs and ERD may indicate missing or incorrect requirements.
+
+==================================================
+4. EVALUATING REQUIREMENTS
+==================================================
+
+The final stage is requirements evaluation.
+
+Objectives:
+- Confirm that the gathered and analyzed requirements actually match
+  the real needs of users and the organization.
+- Check that all important information has been covered.
+- Identify and resolve conflicts in the collected information.
+
+If major conflicts or gaps are found:
+- The requirements analysis cycle must be repeated.
+- New interviews, revisions of process models, and updates to the ERD may be required.
+
+Only when requirements are stable and consistent should database design proceed.
+
+==================================================
+5. SUMMARY
+==================================================
+
+Requirements analysis is a three-step, iterative process:
+
+1) Determination:
+   - Gather information about users, tasks, data, processes, and business rules.
+
+2) Analysis:
+   - Produce process models (DFDs) and a conceptual ERD that together describe
+     how data is used and how processes operate.
+
+3) Evaluation:
+   - Verify coverage and correctness; resolve conflicts; refine models.
+
+The results of this process become the foundation for conceptual, logical, and physical
+database design. A good requirements analysis reduces redesign, improves data quality,
+and ensures that the implemented database actually supports the organization’s goals.

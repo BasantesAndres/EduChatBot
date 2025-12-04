@@ -1,0 +1,26 @@
+Course Units and Contents for DATABASES
+
+UC1: Fundamentals and Database Design
+ 1.1 Introduction to Databases
+ 1.2 Fundamentals of the Relational Model (Tables, Relationships, Normalization, PK, FK, Referential Integrity)
+ 1.3 Conceptual Database Modeling
+ 1.4 Logical and Physical Modeling of Databases
+
+UC2: Structured Query Language (SQL)
+ 2.1 Data Definition Language (DDL) & Data Manipulation Language (DML)
+ 2.2 Introduction to SQL and Basic Queries (SELECT, WHERE)
+ 2.3 Advanced Queries (Cross, Inner, Right, Left Join)
+ 2.4 Advanced Queries (Aggregation)
+ Additional topics: Functions, Stored Procedures, Permissions, Backup and Restore
+
+UC3: Development of APIs for Database Operations
+ 3.1 Introduction to APIs for Databases 1/2
+ 3.2 Introduction to APIs for Databases 2/2
+ 3.3 API Design Methods for Databases 1/2
+ 3.4 API Design Methods for Databases 2/2
+
+UC4: Non-SQL Databases and their Applications
+ 4.1 Introduction to No-SQL Databases
+ 4.2 No-SQL Database Application Case Studies
+ 4.3 Implementation of APIs for Non-SQL Databases 1/2
+ 4.4 Implementation of APIs for Non-SQL Databases 2/2
