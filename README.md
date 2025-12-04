@@ -2,7 +2,7 @@
 
 **Author:** Andrés Basantes  
 **Course:** Intelligent Agents – Yachay Tech  
-**Target Course:** Databases (UC1–UC4)
+**Target Course:** Databases (UC1)
 
 ---
 
@@ -359,14 +359,14 @@ You can run small experiments by changing these values and asking a set of 8–1
 
 ## 🖥️ Running the Project
 
-> Requisitos previos:
+> **Prerequisites:**
 > - Python 3.10+  
-> - Ollama instalado y modelo `gemma3:4b` descargado  
-> - (Opcional) Git, VSCode  
+> - Ollama installed and model `gemma3:4b` pulled  
+> - (Optional) Git, VSCode  
 
-### 1️⃣ Crear entorno virtual e instalar dependencias
+### 1️⃣ Create virtual environment and install dependencies
 
-Desde la raíz del proyecto:
+From the project root:
 
 ```bash
 python -m venv .venv
@@ -374,33 +374,33 @@ python -m venv .venv
 # PowerShell (Windows)
 .\.venv\Scripts\Activate.ps1
 
-# Instalar dependencias
+# Install dependencies
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-### 2️⃣ Preparar RAG (indexar documentos del curso)
+### 2️⃣ Prepare RAG (index course documents)
 
 ```bash
 cd src
 python -m educhat.build_rag
 ```
 
-Debes ver:
+You should see:
 
 ```text
 Loaded N documents from data/raw
 ✅ Vector store built in data/processed/chroma
 ```
 
-### 3️⃣ Probar el chatbot en consola (CLI)
+### 3️⃣ Run the chatbot in the console (CLI)
 
 ```bash
 cd src
 python -m educhat.cli
 ```
 
-Ejemplo de interacción:
+Example interaction:
 
 ```text
 🔄 Compiling EduChatAgent graph, please wait...
@@ -423,18 +423,18 @@ EduChatAgent:
 }
 ```
 
-### 4️⃣ Levantar la API (FastAPI)
+### 4️⃣ Start the API (FastAPI)
 
-Desde `src`:
+From `src`:
 
 ```bash
 uvicorn educhat.api:app --reload
 ```
 
-- Docs interactivos: `http://127.0.0.1:8000/docs`
-- Endpoint principal: `POST http://127.0.0.1:8000/chat`
+- Interactive docs: `http://127.0.0.1:8000/docs`
+- Main endpoint: `POST http://127.0.0.1:8000/chat`
 
-Ejemplo body:
+Example JSON body:
 
 ```json
 {
@@ -443,17 +443,17 @@ Ejemplo body:
 }
 ```
 
-### 5️⃣ Abrir la Web UI
+### 5️⃣ Open the Web UI
 
-- Archivo: `web/index.html`
-- Simplemente ábrelo en el navegador (doble clic).
-- Asegúrate de que la API está corriendo en `http://localhost:8000`.
+- File: `web/index.html`
+- Just open it in your browser (double click).
+- Make sure the API is running at `http://localhost:8000`.
 
-La UI:
+The UI:
 
-- Muestra burbujas de chat (usuario + bot).
-- Envía mensajes vía `fetch()` a `POST /chat`.
-- Indica el estado (“Ready”, “Thinking…”, errores de red).
+- Shows chat bubbles (user + bot).
+- Sends messages via `fetch()` to `POST /chat`.
+- Indicates status (“Ready”, “Thinking…”, network errors).
 
 ---
 
@@ -485,7 +485,7 @@ La UI:
 
 - Open-source LLM via **Ollama (gemma3:4b)**.
 - Parameter tuning (temperature, top_p, max_new_tokens) easily configurable in `config.py`.
-- Observed behavior differences across configurations (for the report).
+- Observed behavior differences across configurations (for the written report).
 
 **Agent Competency**
 
@@ -505,12 +505,12 @@ La UI:
 
 ## 🔎 Possible Future Work
 
-- ✅ Add **authentication** or student ID sessions.
-- ✅ Store conversation logs in a real database instead of JSONL.
-- ✅ Add **teacher mode** to generate new quiz questions from UC contents.
-- ✅ Export answers / explanations as PDF cheat sheets.
-- ✅ Integrate voice input/output for accessibility.
-- ✅ Add more advanced evaluation (automatic grading of answers).
+- Add **authentication** or per-student sessions.
+- Store conversation logs in a real database instead of JSONL.
+- Add **teacher mode** to generate new quiz questions from UC contents.
+- Export answers / explanations as PDF cheat sheets.
+- Integrate voice input/output for accessibility.
+- Add more advanced evaluation (automatic grading of answers).
 
 ---
 
